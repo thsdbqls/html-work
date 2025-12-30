@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 순서
+        1) body 색 지정
+        2) 공통적인 설정(*) - 글자 크기, 글자 색깔, 중앙 정렬
+        3) #wrap 설정-너비, 높이(선택)-display:flex, margin : 0 auto
+        4) #aside와 #content 설정 - 너비, 높이
+        5) aside, header, main, footer에 대한 설정 - 너비(선택), 높이, 배경
+        6) float */
+        body{background-color: cyan;}
+        *{color:white; font-size: 40px; text-align: center;}
+        /* 1009가 되면 #aside와 #content가 올라오는 것은 그 사이의 간격이 9px이여서 이다 */
+        #wrap{width: 1009px; height: auto; margin: 0 auto;}
+        
+        #aside{width: 300px; height: 1000px; background-color: aquamarine;}
+        #content{width: 700px; height: 1000px; background-color: rgb(22, 68, 68);}
+
+        /*왼쪽으로 땡기는 것 말고 wrap을 inline으로 바꿔본다*/
+        /* #wrap{display: flex;} */
+        #aside,#content{display: inline-block; vertical-align: top;}
+
+        /* #aside display 방식이 inlin-block일 때 box가 글자취급하게 됨 */
+        /* 컨텐츠는 기본적으로 아래 방향에 있기 때문에 이것을 top으로 올리면 된다. */
+        /* #aside 안에는 aside 컨텐츠가 있다. */
+        /* vertical-align: 를 이용하여 상단에 위치(top)하도록 설정 변경 */
+
+        header,main,footer{width: 700px; height: 330px;}
+
+        header{background-color: coral;}
+        main{background-color: rgb(189, 106, 76);}
+        footer{background-color: rgb(121, 86, 73);}
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="aside">
+            <aside>side</aside>
+        </div>
+        <div id="content">
+            <header>header</header>
+            <main>main</main>
+            <footer>footer</footer>
+        </div>
+    </div>
+</body>
+</html>

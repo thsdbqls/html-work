@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box.html - box의 구조를 확인하기</title>
+    <style>
+        div{
+            /* box는 마진(margin), 테두리(border), 패딩(padding), 
+            내용물(content), 배경(background)로 구성*/
+            /* 테두리 */
+            border : 5px solid red;
+            /* 내용물은 문자열(크기, 색깔, 모양*/
+            font-size: 30px;
+            color: yellow; /*문자 색깔만 font- 가 아니다*/
+            font-style: italic;
+            /* 배경은 색깔만 하면 된다 */
+            background-color: grey;
+
+            /* 마진 */
+            margin: 20px 50px;
+
+            /* 패딩 */
+            padding: 10px;
+
+            /*개별로 설정하기 위한 속성 - top. bottom, left, fight
+            margin:20px 50px; 20px은 위아래 50px은 좌우*/
+        }
+    </style>
+</head>
+<body>
+    <div>box</div>
+    <div>box2</div>
+</body>
+</html>

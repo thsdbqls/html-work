@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+     1) 전체 태그를 마진, 패딩을 0으로 설정
+     2) 각 wrap의 배경색 지정
+     3) 각 컨테이너의 배경색 지정
+     4) 공통적으로 확인사항 : 너비(width), 높이(height), 가로세로 중앙 정렬(text-align, line-height)
+      -->
+     <style>
+      *{margin: 0; padding: 0;}
+      #wrap{background-color: aquamarine;
+            width: 100%; height: 1000px;
+            font-size: 30px; text-align: center;
+            text-transform:uppercase ;}
+      #header-wrap{width: 100%; height: 100px; line-height: 100px; background-color: rgba(165, 42, 42, 0.788);}
+      #banner-wrap{width: 100%; height: 100px; line-height: 100px; background-color: rgba(165, 42, 42, 0.63);}
+      #content-wrap{width: 100%; height: 100px; line-height: 100px; background-color: rgba(165, 42, 42, 0.466);}
+      #footer-wrap{width: 100%; height: 100px; line-height: 100px; background-color: rgba(165, 42, 42, 0.205);}
+
+      .header-cotainer{width: 1000px; height: inherit; background-color: rgb(226, 82, 82); margin: 0 auto;}
+      .banner-cotainer{width: 1000px; height: inherit; background-color: rgb(150, 76, 76); margin: 0 auto;}
+      .content-cotainer{width: 1000px; height: inherit; background-color: rgba(226, 82, 82, 0.486); margin: 0 auto;}
+      .footer-cotainer{width: 1000px; height: inherit; background-color: rgba(163, 109, 109, 0.685); margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header-wrap">
+            <div class="header-cotainer">header</div>
+        </div>
+
+        <div id="banner-wrap">
+            <div class="banner-cotainer">banner</div>
+        </div>
+
+        <div id="content-wrap">
+            <div class="content-cotainer">content</div>
+        </div>
+
+        <div id="footer-wrap">
+            <div class="footer-cotainer">footer</div>
+        </div>
+    </div>
+</body>
+</html>

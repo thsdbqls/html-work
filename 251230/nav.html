@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            border: 1px solid black;
+        }
+        ul{
+            border: 1px solid red;
+        }
+        li{
+            list-style: none;
+        }
+        ul{padding: 0;}
+        body{border: 1px solid green;}
+        body{margin: 0;}
+        ul{margin-top: 0; margin-bottom: 0;}
+        li{display: inline;} /* display: inline, block, inline-blick, flex */
+        
+        /* 박스간격을 띄우고 싶다 */
+        /* 패딩의 top 부분은 계산되지 않음 */
+        li{padding: 50px 12px;}
+
+        li{display: inline-block;} /*문제점은 li사이의 enter간격이 존재하고 있다*/
+        /*li{display: flex;} /* 중앙으로 내려간다*/
+        /*li{display: flex;} /* flex속성은 직접적인 속성이 아닌 상위의 속성 */
+        ul{display: flex;} /* li간격이 발생할 경우 li에 직접적인 처리는 되지 않으며 상위 태그인 ul에서만 된다*/
+        li{padding: 8px 12px;}
+        li:hover{background-color: black;color: white;}
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- ul>li*4{MENU$} : vs code 편십기에서 여러개의 태그 생성방법-->
+         <!-- 4번 반복해서 li를 만들며 값을 MENU(반복값)으로 나타낸다 -->
+        <ul>
+            <li>MENU1</li>
+            <li>MENU2</li>
+            <li>MENU3</li>
+            <li>MENU4</li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

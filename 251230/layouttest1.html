@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        body{background-color: aquamarine; }
+        /* id는 #을 넣어야 함 (중요) */
+        #wrap2{margin: 0 auto; width: 1000px; text-align: center;}
+        header{background-color: green; color: white;
+             font-size: 40px; line-height: 100px;
+            width: 1000px; height: 100px;}
+
+        nav{background-color: rgb(42, 187, 42); color: white;
+             font-size: 40px;
+            line-height: 100px;
+            width: 1000px; height: 100px;}
+
+        aside{background-color: rgb(66, 187, 66); color: white;
+            font-size: 40px;
+            line-height: 600px;
+            width: 200px; height: 600px;}
+
+        main{background-color: rgb(124, 204, 124); color: white;
+             font-size: 40px;
+            line-height: 600px;
+            width: 600px; height: 600px;}
+
+        footer{background-color: rgb(174, 233, 174); color: white;
+            font-size: 40px;
+            line-height: 100px;
+            width: 1000px; height: 100px;}
+
+        aside,main,footer{float: left;}
+    </style>
+</head>
+<body>
+    <!-- 
+    1) body 안에 header, nav, aside, main, footer를 만들것이다
+    2) 우선 body의 배경색을 넣어준다
+    3) 해더는 중앙에 위치한다
+    4) 해더의 글자는 중앙에 위치
+    5) 글자 크기 -->
+    <div id="wrap2">
+        <header>header</header>
+        <nav>nav</nav>
+        <aside>side</aside>
+        <main>content</main>
+        <aside>side</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

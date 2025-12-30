@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{background-color: #c8e6c9; }
+    #wrap{margin: 0 auto;text-align: center;width: 1000px;}
+    /* 헤더는 너비와 높이, 배경색, 글자색, 글자크기, 을 정한다 */
+    header{width: 1000px; height: 100px;
+        background-color: rgb(25, 155, 25);
+        color: white;font-size: 40px;
+        text-align: center; line-height: 100px;}
+
+    nav{width: 1000px; height: 100px;
+        background-color: rgb(49, 158, 49);
+        color: white;font-size: 40px;
+        text-align: center; line-height: 100px;}
+
+    aside{width: 300px; height: 600px;
+        background-color: rgb(90, 223, 90);
+        color: white;font-size: 40px;
+        text-align: center; line-height: 100px;}
+
+    main{width: 700px; height: 600px;
+        background-color: rgb(122, 224, 122);
+        color: white;font-size: 40px;
+        text-align: center; line-height: 100px;}
+
+    footer{width: 1000px; height: 100px;
+        background-color: rgb(180, 240, 180);
+        color: white;font-size: 40px;
+        text-align: center; line-height: 100px;}
+
+    aside,main,footer{float: left;} /*aside를 왼쪽으로 땡긴다*/
+</style>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <nav>nav</nav>
+        <aside>side</aside>
+        <main>content</main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

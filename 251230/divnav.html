@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cnav{background-color: aqua;}
+        #nav2{background-color: aquamarine;}
+        ul{list-style: none;}
+        #nav2>ul>li:first-child{background-color: black; color: white;} /*first-child 첫번째 자식을 변경*/
+        #nav2>ul>li:nth-child(3){background-color: gray; color: brown;}
+        #nav3 li{background-color: orange;}
+        ul,li{list-style: none;}
+    </style>
+</head>
+<body>
+    <div id="nav"; class="cnav"> 
+        <ul>
+            <li>MENU1</li>
+            <li>MENU2</li>
+            <li>MENU3</li>
+            <li>MENU4</li>
+        </ul>
+    </div>
+    <!-- div#nav>ul>li*4 -->
+     <div id="nav2">
+        <ul>
+            <li>SUB_MUNU1</li>
+            <li>SUB_MUNU2</li>
+            <li>SUB_MUNU3</li>
+            <li>SUB_MUNU4</li>
+        </ul>
+     </div>
+     <!-- div$cnav>ul>li*4{SUB_MENU$} -->
+     <div1cnav>
+        <ul>
+            <li>SUB_MENU1</li>
+        </ul>
+     </div1cnav>
+
+     <div class="cnav">
+        <ul>
+            <li>SUB_MENU%</li>
+            <li>SUB_MENU%</li>
+            <li>SUB_MENU%</li>
+            <li>SUB_MENU%</li>
+        </ul>
+     </div>
+     <div id="nav3">
+        <ul>
+            <li>SUB_MUNU1</li>
+            <li>SUB_MUNU2</li>
+            <li>SUB_MUNU3</li>
+            <li>SUB_MUNU4</li>
+        </ul>
+     </div>
+</body>
+</html>
