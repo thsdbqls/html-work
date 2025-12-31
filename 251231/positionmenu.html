@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        #menu{
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            width: 100%; /* 기본적으로 100%를 해준다*/
+            height: 50px;
+        }
+
+        i{
+            color: white;
+        }
+
+        #submenu{
+            width: 200px;
+            height: 500px;
+            background-color: rgba(255, 255, 0, 0.5);
+            position: absolute; /* relative */
+            top: 0px;
+            left: -200px;
+            transition: left 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        
+            <i class="fa-solid fa-bars" onclick="showsubmenu()"></i>
+        MENU</div>
+
+    <div id="submenu">
+        <h3>submenu</h3>
+        <a href="javascript:closesubmenu()">close menu</a>
+    </div>
+
+    <script>
+        function showsubmenu(){
+            //  alert('test')
+             let submenu=document.getElementById("submenu");
+             submenu.style.left="0px";
+        }
+        function closesubmenu(){
+            let submenu=document.getElementById("submenu");
+            submenu.style.left="-200px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- data의 규칙 : 소문자-(하이픈) 속성 -->
+     <!-- 사용자 데이터 정의 -->
+    <div data-id="3" data-name="apple"></div>
+
+    <!-- data태그를 이용하여 값 부여 및 값 접근(getArrtibute) -->
+    <ul>
+        <li><data value="21053">Cherry Tomato</data></li>
+        <li><data value="21054">Beef Tomato</data></li>
+        <li><data value="21055">Snack Tomato</data></li>
+    </ul>
+
+    <!-- datalist -->
+    <input list="browsers">
+    <datalist id="browsers">
+        <option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    
+    <!-- dl : define list : 리스트/dt : define title : 제목/dd : define description : 설명 -->
+    <dl>
+        <dt>java</dt>
+        <dd>java는 객체지향 언어이다.</dd>
+        <dt>html</dt>
+            <dd>html은 웹상에서 문서를 정의하는 언어</dd>
+        <dt>javascript</dt>
+        <dd>html을 동적으로 만들어주는 프로그래밍 언어</dd>
+    </dl>
+
+    <!-- 다이얼로그 접근 방법 -->
+     <dialog open>
+        this is an open dialog window
+        <button onclick="dialogtoggle()">다이얼로그 열고 닫기</button>
+    </dialog>
+
+     <button onclick="dialogtoggle()">다이얼로그 열고 닫기</button>
+     <script>
+        let dialog=document.querySelector("dialog");
+        // dialog.showModal
+        // dialog.open=true;
+        // 함수 dialogtoggle()을 이용하여 2가지 상태를 해야 한다.
+        let openstate=true;
+        function dialogtoggle(){
+            //오픈 상태가 열려있으면
+        if(openstate==true){
+            // 값을 false로 하여 닫고
+            dialog.open = false;
+            // 오픈 상태를 false로 바꾼다
+            openstate = false;
+        }else{
+            dialog.open = true;
+            openstate = true;
+        }
+        }
+       
+     </script>
+
+    <fieldset>
+        <legend><font size="30">제목</legend>
+        <div>제목에 내용입니다</div>
+    </fieldset>
+    <fieldset>
+     <legend><font size="30">제목2</legend>
+        <div>제목2에 내용입니다</div>
+    </fieldset>    
+
+    <hr>
+
+    <!-- input 태그 (중요) -->
+    <input type="text"><br>
+    <input type="password"><br>
+    <input type="button" value=""><br>
+    <input type="submit" value=""><br>
+    <input type="radio"> <br>
+    <input type="checkbox"><br>
+
+    <input type="color"><br>
+    <input type="date"><br>
+    <input type="range"><br>
+</body>
+<script>
+    console.log(document.querySelector("div").dataset.id);
+    console.log(document.querySelector("div").dataset.name);
+    /* gpt :
+    <ul>
+        <li><data value="21053">Cherry Tomato</data></li>
+        <li><data value="21054">Beef Tomato</data></li>
+        <li><data value="21055">Snack Tomato</data></li>
+    </ul> 첫번째 li 태그 queryselector로 접근하는 방법
+    */
+    // console.log(document.querySelector("ul>li"));
+    // console.log(document.querySelector("li:firstchild").getAttribute("value"));
+    console.log(
+        //data의 첫번째의 value에 있는 값을 가져와라
+        document.querySelector("data:first-child").getAttribute("value")
+        );
+
+        /*
+        console.log(
+        document.querySelector("data:nchild(2)").getAttribute("value")
+        );
+        */
+</script>
+</html>

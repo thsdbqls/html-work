@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .navbar{display: flex; border: 1px solid black; background-color: black; color: white;}
+        *{list-style: none; margin: 0px; padding: 0;}
+
+        .logo, .menu, .icons{display: flex;}
+
+        .navbar{justify-content:space-between;}
+
+        .logo > li{padding: 8px 10px;}
+        .menu > li{padding: 8px 12px;}
+        .icons > li{padding: 8px 10px;}
+
+        *{border: none;}
+        .menu > li:hover{background-color: orange; color: aqua; border-radius: 5px;}
+
+        
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <ul class="logo">
+            <li><i class="fa-brands fa-accusoft"></i></li>
+            <li>회사</li>
+        </ul>
+        <ul class="menu">
+            <li>회사 소개</li>
+            <li>사업 소개</li>
+            <li>제작 과정</li>
+            <li>구매</li>
+            <li>게시판</li>
+        </ul>
+        <ul class="icons">
+            <li><i class="fa-solid fa-user-plus"></i></li>
+            <li><i class="fa-solid fa-camera"></i></li>
+            <li><i class="fa-solid fa-message"></i></li>
+            <li><i class="fa-solid fa-font-awesome"></i></li>
+        </ul>
+    </ul>
+</body>
+</html>
