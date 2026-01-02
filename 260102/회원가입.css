@@ -1,0 +1,108 @@
+/* 전체 */
+*{margin: 0; padding: 0; }
+#wrap{
+            
+    width: 40%;
+    height: auto;
+    margin: 10%;
+    height: auto;
+    border: 1px solid black;
+}
+
+#wrap-id{
+    margin: 3% 10%;
+    width: 400px;
+    height: 100%;
+}
+label{
+    width: 30%;
+    padding: 0px 10px;
+}
+
+/* 아이디 */
+#id1{
+    width: 70%;
+    margin: 0px 20px;
+}
+
+/* 비밀번호 */
+#password1{
+    width:70%;
+    margin: 7px;
+}
+
+#passid{
+    width: 30;
+}
+
+#password2{
+    width: 70%;
+    margin: 0px 88px;
+}
+
+/* 이름 */
+#name{
+    width: 50%;
+    margin: 0px 35px;
+}
+
+/* 주소 */
+#ud{
+    display: inline;
+    width: 80%;
+    margin: 0px 35px;
+}
+#ud1,#ud2{
+    margin: 0px 3px;
+}
+
+#udtext1{
+    width: 50%;
+    margin: 0px 88px;
+    padding: 0px 0px;
+}
+
+#udtext2{
+    width: 50%;
+    margin: 0px 88px;
+}
+
+
+/* 휴대폰 */
+#tel{
+    width: 100%;
+}
+#tel1{
+    width: 30%;
+}
+
+#tel2{
+    width: 30%;
+}
+
+/* 전화번호 */
+#htel{
+    width: 100%;
+}
+#htel1{
+    width: 30%;
+}
+
+#htel2{
+    width: 30%;
+}
+
+
+#wrap-check{
+    margin: 3% 10%;
+}
+
+#wrap-button{
+    margin: 0px 10px;
+    width: 50%;
+    display: inline;
+}
+
+h3{
+    text-align: center;
+}

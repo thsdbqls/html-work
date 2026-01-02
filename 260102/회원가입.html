@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="회원가입.css">
+    
+
+</head>
+<body>
+    <div id="wrap">
+        <h3>회원가입</h3>
+        <hr>
+    <ul id="wrap-id">
+            <li><label>아이디</label> 
+                <input type="text" id="id1" name="id1" placeholder="아이디 입력" >
+            
+
+            <li><label>비밀번호</label> <input type="password" 
+                name="password1" id="password1" placeholder="비밀번호"
+                style="vertical-align: left;"><br>
+
+            <input type="text" id="passid" hidden>
+            
+            <input type="password" name="password2" id="password2" placeholder="비밀번호 재확인"></li>
+            
+            <li><label>이름</label> 
+                <input type="text" id="name" name="name" placeholder="이름작성">
+            </li>
+            
+            <li><label>주소</label> 
+                
+                    <input type="text" id="ud1" name="ud1" size="5" maxlength="6">
+                    -<input type="text" id="ud2" name="ud2" size="5" maxlength="6">
+                    <input type="submit" value="우편번호">
+                
+            </li>
+     
+            <li><input type="text" id="udtext1" name="udtext1"></li>
+            <li><input type="text" id="udtext2" name="udtext2"></li>
+
+            <li id="tel">
+                <label >휴대전화</label>
+                <span>
+                    <select>
+                        <option>010</option>
+                        <option>001</option>
+                        <option>011</option>
+                        <option>019</option>
+                    </select>
+                </span>
+                <input type="tel" id="tel1" name="tel1">
+                <input type="tel" id="tel2" name="tel2">
+            </li>
+
+            <li id="htel">
+                <label >집 전화</label>
+                <span>
+                    <select>
+                        <option>010</option>
+                        <option>001</option>
+                        <option>011</option>
+                        <option>019</option>
+                    </select>
+                </span>
+                <input type="tel" id="htel1" name="htel1">
+                <input type="tel" id="htel2" name="htel2">
+            </li>
+
+
+            
+            <li><label >이메일</label><input type="text" id="email" name="email">@
+                <span>
+                    <select>
+                        <option>naver</option>
+                        <option>google</option>
+                        <option>daum</option>
+                        <option>019</option>
+                    </select>
+                </span>
+            </li>
+
+            <li>생년월일
+                <input type="radio" name="first" checked>양
+                <input type="radio" name="first" checked>음<br>
+                <span>
+                    <select>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                    </select>
+                </span>
+                <span>
+                    <select>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                </span>
+                <span>
+                    <select>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                    </select>
+                </span>
+            </li><br>
+
+            
+    </ul>
+    <hr>
+    <ul id="wrap-check">
+            <li><span><input type="checkbox">~의 이메일을 수신합니다.</span></li>
+            <li><span><input type="checkbox">~의 sns을 수신합니다.</span></li>
+    </ul>
+    <hr>
+    <ul id="wrap-button">
+        <button id="bt1">가입취소</button>
+        <button id="bt2">회원가입</button>
+    </ul>
+</div>
+    
+</body>
+</html>

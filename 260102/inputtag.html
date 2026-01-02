@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>로그인(get)</legend>
+            <form action="login_proc.html">
+            아이디 : <input type="text" id="id" name="id"><br>
+            비밀번호 : <input type="password" id="password" name="password"><br>
+            <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>로그인(post)</legend>
+        <form action="login_proc.html" method="post">
+        <input type="text" name="id" id="id" placeholder="아이디"><br>
+        <input type="password" name="password" id="password" placeholder="패스워드"><br>
+        <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>로그인(label)</legend>
+        <form action="login_proc.html" method="post">
+            <label for="id3">아이디</label>
+        <input type="text" name="id" id="id3" placeholder="아이디"><br>
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password3" placeholder="패스워드"><br>
+        <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend> 기타 input tag</legend>
+        <ul>
+            <!-- 다중 선택 사항에다 고를 수 있는 것을 다 고르시오 -->
+            <li>
+                <label>채크상자[다중선택시 사용]</label><br>
+                    <span><input type="checkbox"></span>
+            </li>
+            <!-- 여러개 중 한 개만 선택시 -->
+            <li><label>라디오 버튼[여러개 중 한 개만 선택시 사용]</label><br>
+                <span><input type="radio" name="first" checked>1.자바><br>
+                      <input type="radio" name="first" checked>1.c언어><br>
+                      <input type="radio" name="first" checked>1.파이썬><br>
+                </span>
+            </li>
+            <!-- 선택 상자[단일선택, 다중선택 모두 가능] -->
+            <li>
+                <label>선택 상자[단일선택, 다중선택 모두 가능] option multple이 있음</label><br>
+                    <span>
+                        <select>
+                            <option>서울</option>
+                            <option>대전</option>
+                            <option>대구</option>
+                            <option>부산</option>
+                        </select>
+                    </span>
+            </li>
+            <!-- 실질적으로 id와 name이 있다 -->
+            <li>
+                <label>파일업로드</label><br>
+                <span>
+                    <input type="file"><br>
+                </span>
+            </li>
+            <!-- 칼랜더 -->
+            <li>
+                <label>날짜 선택(date, date-time, datetime-local)</label><br>
+                <span>
+                    <input type="date"><br>
+                </span>
+                <span>
+                    <input type="date-time"><br>
+                </span>
+                <span>
+                    <input type="datetime-local"><br>
+                </span>
+            </li>
+
+            <!-- 문자 열 관련 제약성을 처리하는 input -->
+            <li>
+                <label>문자 열 관련 제약성을 처리하는 input</label><br>
+                <!-- 한글 식 처리를 위해 div를 사용
+                 이메일만 사용하고 나머지는 그렇게 사용하지는 않는다 -->
+                    <div><input type="email">이메일</div> <br>
+                    <div><input type="search">검색편집창</div><br>
+                    
+
+                    <div><input type="number">숫자</div><br>
+                    <div><input type="month">달 선택</div><br>
+                    <div><input type="weekend">주 선택</div><br>
+                    
+                    <div><input type="time">시간</div><br>
+                    <div><input type="tel">전화번호</div><br>
+
+                    <div><input type="url">url주소</div><br>
+            </li>
+            <!-- 범위 선택 대화 상자 -->
+            <li>
+                <label>범위 선택 대화 상자</label><br>
+                <form action>
+                    <div><input type="color" name="color">색상을 rgb값으로 전달</div><br>
+                    <div><input type="submit" value="전송"></div>
+                </form>
+
+                <form action>
+                    <div><input type="range" name="range" min="0" max="255">숫자의 범위를 정한다</div><br>
+                    <div><input type="submit" value="전송"></div>
+                </form>
+            </li>
+
+            <!-- 범위 선택 대화 상자 -->
+            <li>
+                <label>input 상자 속성</label><br>   
+                    <!-- 상자를 숨긴다 -->
+                     <div>type을 사용한 상자 숨기기</div><br>
+                    <input type="hidden"></li><br>
+                    <div>hidden을 이용해 직접 없애기</div><br>
+                    <input type="text" hidden></div>  
+                    <!-- 아무리 해도 전달이 안된다 -->
+                    <div>읽기 전용/전송 가능(활성화)</div><br>
+                    <input type="text" value="admin1" readonly></div>  
+                    <div>읽기 전용/전송 가능(비활성화)</div><br>
+                    <input type="text" value="admin2" disabled></div>  
+                    <div>css 활용 비활성화</div><br>
+                    <div>참고 : 스크립트에서
+                        input.readonly= true or false,
+                        input.disabled= true or
+                    </div>
+            </li>
+
+            <style>
+                /* input의 타입이 text인 것에서 disabled인 것은 배경을 노랑으로 */
+                input[type="text"]:disabled{background-color: yellow;}
+            </style>
+            
+
+            <!-- 이미지 -->
+            <li>
+                <label>이미지</label><br>
+                
+                <input type="image" 
+                src="data:image/jpeg;base64,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"
+                alt="보노보노" title="보노보노입니다" width="50"><br>
+
+                <input type="image" 
+                src="C:\Users\seoil\Downloads\bonobono.webp" 
+                alt="보노보노" title="보노보노입니다" width="50"><br>
+
+                 <span class="tooltip">도움말
+                    <span class="tootip=text">설명입니다</span>
+                 </span>
+                
+                <input type="submit" value="전송">
+            </li>
+
+            <li>
+                <label>input의 type이 button과 태그의 버튼은 다르다.</label>
+                <!--  -->
+                <form >
+                    <input type="text" name="id" id="">
+                    <input type="button">전송</input>
+                    <!-- <button>전송</button> -->
+                </form>
+            </li>
+
+            <li>
+                <label>type text는 한줄, textarea는 여러줄</label>
+                <div><textarea rows="10" cols="30">다중편집창 태그입니다.</textarea></div>
+                <div contenteditable="true">div는 단순히 글자를 표현하는 창입니다</div>
+            </li>
+                
+            <!-- value : 태그가 단일 태그(input)인 편집 / content : 시작과 끝이 있는 태그<tag></tag> -->
+            <li>
+                <label >value값 수정</label><br>
+                <div><input type="text" id="changevalue"></div><br>
+                <div contenteditable="true" id="changecontent"
+                style="border: 1px solid red;"></div><br>
+            </li>
+            <script>
+                document.getElementById("changevalue").value="input 상자에 값 넣기"
+                document.getElementById("changecontent").textContent="div 상자에 값 넣기"
+            </script>
+
+            <li>
+                <form>
+                    <label >제약사항은 스크립트로 처리하지만 스크립트 없이 제약사항을 처리하는 방법</label>
+                    <div><input type="email" placeholder="email" required ></div>
+                    <div><input type="password" placeholder="password"  size="20" maxlength="10"></div>
+                    <div><input type="submit" value="전송"></div>
+                </form>
+            </li>
+
+        </ul>
+    </fieldset>
+</body>
+</html>
