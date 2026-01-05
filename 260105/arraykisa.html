@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .wrap{
+            position: relative;
+        }
+
+        .content{ 
+            position: absolute;
+            top: 0;
+            left: 0;
+             border: 1px solid black;
+             width: 150px; height: 100px;
+             font-size: 20px;
+             font-weight: bold;
+             align-content: center;
+             text-align: center;
+             content: "";
+            }
+        .content:hover {
+            /* background-color: blue;  */
+            color: transparent; 
+            /* content: "구독|기사보기"; //원본태그는 content속성이 없음 */
+            
+        }     
+
+        .content:hover::before{
+            content: "before";
+            
+        }
+
+        .content:hover:after {
+            content: "after";
+            background-color: blue;
+            color: white;
+        }
+             
+        .content:hover:after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "구독|기사보기";
+            width: 100%;
+        }
+        .content{
+            background-color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <div class="content">
+        서울신문
+    </div>
+    </div>
+</body>
+<script>
+    const xhttp = new XMLHttpRequest();
+    // const xhttp = new XMLHttpRequest();
+</script>
+</html>

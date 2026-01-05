@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            position: relative;
+        }
+        
+        
+        .content{
+            width: 100px; 
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        div::before{
+            content: "BEFORE";
+            background-color: yellow;
+            top: 50px;
+            left: 50px;
+            position: absolute;
+            width: 100px; 
+            height: 100px;
+        }
+
+
+        div::after{
+            content: "AFTER";
+            background-color: green;
+            top: 80px;
+            left: 80px;
+            position: absolute;
+            width: 100px; 
+            height: 100px;
+        }
+
+        .content:hover{
+            content: "hover content";
+        }
+
+        .content:hover::before{
+            content: "hover before content";
+        }
+
+        .content:hover::after{
+            content: "hover after content";
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="content">
+            div
+        </div>
+    </div>
+</body>
+</html>

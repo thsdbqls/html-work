@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+          padding: 0;}
+        .header>header, .footer>footer{
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+            text-align: center;
+            line-height: 50px;
+            /* align-content:  */
+            font-size: 30px;
+            color:white;
+            
+        }
+        .main{display: flex;}
+        .main>aside{width: 20%; height: 70vh;
+                    background-color: aqua;
+                    display: inline;}
+        main{display: inline-block;
+            margin: 10px;} 
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <header>Cities</header>
+        </div>
+        <div class="main">
+            <aside><div>
+                <li><a href="london.html">런던</a></li>
+                <li><a href="tokyo.html">도쿄</a></li>
+                <li><a href="paris.html">파리</a></li>
+            </div></aside>
+            <main>
+               main
+            </main>
+        </div>
+    
+        <div class="footer"><footer>footer</footer></div>
+    </div>
+</body>
+</html>

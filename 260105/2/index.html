@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+          padding: 0;}
+        .header>header, .footer>footer{
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+            text-align: center;
+            line-height: 50px;
+            /* align-content:  */
+            font-size: 30px;
+            color:white;
+            
+        }
+        .main{display: flex;}
+        .main>aside{width: 20%; height: 70vh;
+                    background-color: aqua;
+                    display: inline;}
+        main{display: inline-block;
+            margin: 10px;} 
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <header>Cities</header>
+        </div>
+        <div class="main">
+            <aside><div>
+                <li onclick="loadpage('london.html')">런던</a></li>
+                <li onclick="loadpage('tokyo.html')">도쿄</a></li>
+                <li onclick="loadpage('paris.html')">파리</a></li>
+            </div></aside>
+            <main><div id="main">
+               main
+            </div></main>
+        </div>
+    
+        <div class="footer"><footer>footer</footer></div>
+    </div>
+
+    <script>/*
+        const main=document.getElementById("main");
+        //ajax 통신을 위한 순서(1. 객체 얻기, 2. 사이트 열기, 3. 보내기, 4. 수신하기)
+        const xhttp=new XMLHttpRequest(); // 객체 얻기 (도구 생성)
+        xhttp.open("GET","london.html",true); //사이트 열기
+        xhttp.send(); //보내기
+        //  수신하기
+        xhttp.onreadystatechange=function(){
+            //메인 사이에 들어갈 내용은 xhttp안에 수신된 텍스트 그대로를 넣은다.
+            //main.textContent=xhttp.responseText
+            // 받은 값을 html관련한 것으로 바꿔주는 것 innerHTML
+            main.innerHTML=xhttp.responseText;
+        }*/
+    </script>
+
+    <script>/*
+        function loadpage(){
+            const main=document.getElementById("main");
+        
+        const xhttp=new XMLHttpRequest();
+        xhttp.open("GET","tokyo.html",true); 
+        xhttp.send(); //보내기
+        //  수신하기
+        xhttp.onreadystatechange=function(){
+            
+            main.innerHTML=xhttp.responseText;
+        }
+        }*/
+       
+        function loadpage(url){
+            const main=document.getElementById("main");
+        
+        const xhttp=new XMLHttpRequest();
+        xhttp.open("GET",url,true); 
+        xhttp.send(); //보내기
+        //  수신하기
+        xhttp.onreadystatechange=function(){
+            
+            main.innerHTML=xhttp.responseText;
+        }
+        }
+    </script>
+</body>
+</html>

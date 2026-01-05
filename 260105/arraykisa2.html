@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover Text Change</title>
+    <style>
+        * { margin: 0; padding: 0; }
+
+        div {
+            border: 1px solid black;
+            width: 150px;
+            height: 100px;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* ::after 위치 기준 */
+        }
+
+        /* hover 시 원래 텍스트 숨김 */
+        div:hover {
+            color: transparent;
+            background-color: blue;
+        }
+
+        /* ::after 기본 상태 */
+        div::after {
+            content: "";
+            position: absolute;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* hover 시 ::after에 텍스트 표시 */
+        div:hover::after {
+            content: "구독 | 기사보기";
+        }
+    </style>
+</head>
+<body>
+    <div>서울신문</div>
+</body>
+</html>

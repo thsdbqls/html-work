@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+          padding: 0;}
+        .header>header, .footer>footer{
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+            text-align: center;
+            line-height: 50px;
+            /* align-content:  */
+            font-size: 30px;
+            color:white;
+            
+        }
+        .main{display: flex;}
+        .main>aside{width: 20%; height: 70vh;
+                    background-color: aqua;
+                    display: inline;}
+        main{display: inline-block;
+            margin: 10px;} 
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <header>Cities</header>
+        </div>
+        <div class="main">
+            <aside><div>
+                <li><a href="london.html">런던</a></li>
+                <li><a href="tokyo.html">도쿄</a></li>
+                <li><a href="paris.html">파리</a></li>
+            </div></aside>
+            <main>
+                <article>
+                    <h2>파리</h2>
+                    <p>
+                    <dl>
+                        <dt>파리 정보</dt>
+                        <dd>
+                            나라: 프랑스(France)<br>
+                            지위: 수도<br>
+                            위치: 프랑스 북부, 센강 주변<br>
+                            인구: 약 210만 명 이상<br>
+                            언어: 프랑스어<br>
+                            통화: 유로(€)
+                        </dd>
+                    
+                        <dt>특징</dt>
+                        <dd>
+                            예술·패션·문화의 중심지<br>
+                            역사적인 건축물이 많은 도시<br>
+                            관광객이 매우 많은 세계적 도시
+                        </dd>
+                    
+                        <dt >유명한 명소</dt>
+                        <dd>
+                            에펠탑<br>
+                            루브르 박물관<br>
+                            노트르담 대성당<br>
+                            샹젤리제 거리<br>
+                            개선문
+                        </dd>
+                    </dl>
+                    
+                </p> 
+                </article>
+                
+            </main>
+        </div>
+    
+        <div class="footer"><footer>footer</footer></div>
+    </div>
+</body>
+</html>

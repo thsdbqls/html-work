@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+          padding: 0;}
+        .header>header, .footer>footer{
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+            text-align: center;
+            line-height: 50px;
+            /* align-content:  */
+            font-size: 30px;
+            color:white;
+            
+        }
+        .main{display: flex;}
+        .main>aside{width: 20%; height: 70vh;
+                    background-color: aqua;
+                    display: inline;}
+        main{display: inline-block;
+             margin: 10px;} 
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <header>Cities</header>
+        </div>
+        <div class="main">
+            <aside><div>
+                <li><a href="london.html">런던</a></li>
+                <li><a href="tokyo.html">도쿄</a></li>
+                <li><a href="paris.html">파리</a></li>
+            </div></aside>
+            <main>
+                <article>
+                    <h2>도쿄</h2>
+                    <p>
+                        <dl>
+                            <dt>도쿄 정보</dt>
+                            <dd>
+                                나라: 일본(Japan)<br>
+                                지위: 수도<br>
+                                위치: 일본 혼슈 동부, 간토 지방<br>
+                                인구: 약 1,400만 명 이상<br>
+                                언어: 일본어<br>
+                                통화: 엔(¥)
+                            </dd>
+                        
+                            <dt>특징</dt>
+                            <dd>
+                                일본의 정치·경제·문화 중심지<br>
+                                세계 최대 규모의 대도시권<br>
+                                전통과 첨단 기술이 공존
+                            </dd>
+                        
+                            <dt>유명한 명소</dt>
+                            <dd>
+                                도쿄 타워<br>
+                                스카이트리<br>
+                                아사쿠사 센소지<br>
+                                시부야 스크램블 교차로<br>
+                                황궁
+                            </dd>
+                        </dl>
+                        
+                    </p>
+                </article>
+              
+            </main>
+        </div>
+    
+        <div class="footer"><footer>footer</footer></div>
+    </div>
+</body>
+</html>
