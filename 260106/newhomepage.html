@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홈페이지 메뉴</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            width: 100%;
+            background: #333;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li:hover {
+            background: #444;
+        }
+        /* 서브 메뉴 */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #555;
+            min-width: 180px;
+        }
+        nav ul li ul li a {
+            padding: 12px 15px;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>
+            <a href="#">회사소개</a>
+            <ul>
+                <li><a href="#">인사말</a></li>
+                <li><a href="#">회사개요</a></li>
+                <li><a href="#">연혁</a></li>
+                <li><a href="#">비전·미션</a></li>
+                <li><a href="#">조직도</a></li>
+                <li><a href="#">오시는 길</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">사업 안내</a>
+            <ul>
+                <li><a href="#">사업 분야 소개</a></li>
+                <li><a href="#">주요 서비스</a></li>
+                <li><a href="#">서비스 특징</a></li>
+                <li><a href="#">진행 절차</a></li>
+                <li><a href="#">제휴·협력사</a></li>
+                <li><a href="#">실적 및 사례</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">예약안내</a>
+            <ul>
+                <li><a href="#">예약 안내</a></li>
+                <li><a href="#">예약하기</a></li>
+                <li><a href="#">예약 현황 조회</a></li>
+                <li><a href="#">예약 변경·취소</a></li>
+                <li><a href="#">이용 요금 안내</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">갤러리</a>
+            <ul>
+                <li><a href="#">시설 갤러리</a></li>
+                <li><a href="#">이용 사진</a></li>
+                <li><a href="#">이벤트 갤러리</a></li>
+                <li><a href="#">영상 갤러리</a></li>
+                <li><a href="#">Before & After</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">게시판</a>
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">뉴스 & 소식</a></li>
+                <li><a href="#">이벤트 안내</a></li>
+                <li><a href="#">고객 후기</a></li>
+                <li><a href="#">문의하기</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>
