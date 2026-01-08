@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>전달된 아이디:</label>
+        <span id="id"></span>
+    </div>
+    <div>
+        <label>전달된 비밀번호:</label>
+        <span id="password"></span>
+    </div>
+</body>
+
+<script>
+    console.log(document.cookie)
+    // 쿠키의 형태 key=value;(space)key=value;...(반복)
+    let cookies=document.cookie.split("; ");  // ;을 기준으로 분리한다 이때 ;(space)해야 한다
+    console.log(cookies);
+
+    let info={};  //객체 형태
+
+    // c에 cookies의 값을 한개 씩 가져온다
+    for(c of cookies){
+        console.log(c);                    // id=admin
+        console.log("_______________");
+        
+        info[c.split("=")[0]]=c.split("=")[1];  // id=admin을 =을 기준으로 분리하여
+                                                // info에는 id가 c에는 admin이 저장된다.
+  
+    }
+    document.getElementById("id").textContent=info["id"];   // 이것을 id로 빼주고
+    document.getElementById("password").textContent=info["password"];  // 이것을 password로 빼준다.
+    localStorage.setItem("id",info["id"]);
+    sessionStorage.setItem("password",info["password"])
+
+</script>
+</html>

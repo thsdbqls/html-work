@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+</body>
+</html>
+
+<script>
+    /*
+    // html 내에서 태그를 찾느 함수
+    document.querySelector
+    document.querySelectorAll  //전체에서 찾기
+    document.getElementById    // id로 찾기
+    document.getElementsByName  // name으로 찾기
+    document.getElementsByClassName
+    document.getElementsByTagName
+    document.getElementsByTagNameNS  //
+    */
+
+    // let 으로 선언된 변수는 문법에 엄격하므로 초기화 처리해야함
+    let inputs = undefined;
+
+    // htmlcollection 반환(foreach 존재하지 않음)
+    inputs = document.getElementsByTagName("input");
+    console.log(inputs);
+
+    // collection은 무엇을 사용해야 하나
+    // 둘 다 사용할 수 있는 것은 배열이다
+    for(i=0;i<inputs.length;i++){
+        console.log(inputs[i]);
+    }
+
+    // nodelist 반환(foreach 존재함)
+    inputs = document.querySelectorAll("input");
+    console.log(inputs);
+
+    inputs.forEach(element => {
+        console.log(element);
+    });
+
+    //input 태그에 배경색을 노란색으로 모두 변경하시오.
+    inputs.forEach(element => {
+        element.style.backgroundColor="yellow";
+    })
+
+    //input tag의 값을 순차적으로 1부터 n까지 입력하시오.
+    let j=1;
+
+    inputs.forEach(element => {
+        element.value = j++
+    })
+
+</script>
