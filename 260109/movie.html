@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" id="year" name="year" placeholder="년도">
+        <input type="text" id="month" name="month" placeholder="월">
+        <input type="text" id="day" name="day" placeholder="일">
+        <input type="submit" value="확인" onclick="gopage()">
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    
+    function gopage(){
+        const _year = document.getElementById("year").value;
+        const _month = document.getElementById("month").value;
+        const _day = document.getElementById("day").value;
+
+        // console.log(_year)
+        const _mov=_year+_month+_day
+        console.log(_mov);
+
+
+        const xhttp=new XMLHttpRequest();
+        xhttp.open("GET","https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=eb3118f3ce91d53e3b097543d60229ed&targetDt="+_mov,true);
+        xhttp.send();
+        xhttp.onload=function(){
+            console.log(xhttp.responseText);
+
+            const obj=JSON.parse(xhttp.responseText);
+            console.log(obj.boxOfficeResult.dailyBoxOfficeList);
+
+            for(i=0; i<obj.boxOfficeResult.dailyBoxOfficeList.length; i++){
+            // console.log(obj.boxOfficeResult.dailyBoxOfficeList[i]);
+            let _rnum = obj.boxOfficeResult.dailyBoxOfficeList[i].rnum;
+            let _movieNm = obj.boxOfficeResult.dailyBoxOfficeList[i].movieNm;
+
+            const td1=document.createElement("td");
+            td1.textContent=obj.boxOfficeResult.dailyBoxOfficeList[i].rank;
+            // console.log(td1)
+
+            const td2=document.createElement("td");
+            td2.textContent=obj.boxOfficeResult.dailyBoxOfficeList[i].movieNm;
+            // console.log(td2)
+
+            const tr=document.createElement("tr");
+
+            //tr에 td1,2를 넣는다.
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+
+            // 생성된 tr을 tbody에 append
+            document.getElementById("tbody").appendChild(tr);
+            
+
+            // viewser.html에서 id값을 전달하도록 click 이벤트 추가
+            tr.addEventListener("click",function(){
+                // 
+                location.href=`movieview.html?id=${_rnum}`;
+            })
+            }
+        }
+    }
+
+</script>
+
+<style>
+    tr:hover{
+        background-color: yellow;
+    }
+</style>

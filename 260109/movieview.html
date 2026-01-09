@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 상세보기</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Pretendard", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .movie-detail {
+            width: 100%;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 포스터 영역 */
+        .poster {
+            flex: 1 1 300px;
+            background: #000;
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 정보 영역 */
+        .info {
+            flex: 2 1 500px;
+            padding: 40px;
+        }
+
+        .rank {
+            display: inline-block;
+            background: #ff3d00;
+            color: #fff;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 10px 0 20px;
+            color: #222;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .detail-label {
+            width: 120px;
+            font-weight: 700;
+            color: #666;
+        }
+
+        .detail-value {
+            color: #222;
+        }
+
+        .divider {
+            margin: 30px 0;
+            height: 1px;
+            background: #eee;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .movie-detail {
+                flex-direction: column;
+            }
+
+            .info {
+                padding: 25px;
+            }
+
+            .title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="movie-detail">
+
+        <!-- 포스터 -->
+        <div class="poster">
+            <!-- <img src="https://via.placeholder.com/400x600?text=Movie+Poster" alt="영화 포스터"> -->
+        </div>
+
+        <!-- 영화 정보 -->
+        <div class="info">
+            <span class="rank">박스오피스 1위</span>
+
+            <h1 class="title">범죄도시 4</h1>
+
+            <div class="detail-item">
+                <div class="detail-label">순위</div>
+                <div class="detail-value">1위</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">개봉 날짜</div>
+                <div class="detail-value">2024-04-24</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="description">
+                괴물형사 마석도가 신종 마약 사건의 배후를 추적하며
+                역대급 범죄 조직과 맞서 싸우는 통쾌한 범죄 액션 영화.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    // 전달되는 파라메다의 값을 확인
+    const _url=new URLSearchParams(location.search);
+    console.log(_url.get("id"));
+    const _id=_url.get("id");
+    console.log(_id);
+
+    const url=`http://127.0.0.1:5500/260109/movie.html?id=${_id}`;
+    console.log(_url);
+
+</script>

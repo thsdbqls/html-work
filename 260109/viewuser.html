@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세보기 폼</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 850px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="url"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 8px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="tel"]:focus, textarea:focus {
+            border-color: #ff7e5f;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 126, 95, 0.3);
+        }
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        button {
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            input[type="text"], input[type="email"], input[type="url"], input[type="tel"], textarea {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <!-- 프로필 이미지 -->
+            <h1>상세보기 폼</h1>
+            <form action="#" method="POST">
+                <!-- 이름 -->
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                </div>
+
+                <!-- 별명 -->
+                <div class="form-group">
+                    <label for="nickname">별명</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="별명을 입력하세요" required>
+                </div>
+
+                <!-- 이메일 -->
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                </div>
+
+                <!-- 주소 -->
+                <div class="form-group">
+                    <label for="address">주소</label>
+                    <input id="address" name="address" placeholder="주소를 입력하세요" required></input>
+                </div>
+
+                <!-- 전화번호 -->
+                <div class="form-group">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요" required>
+                </div>
+
+                <!-- 웹사이트 -->
+                <div class="form-group">
+                    <label for="website">웹사이트</label>
+                    <input type="url" id="website" name="website" placeholder="웹사이트 주소를 입력하세요">
+                </div>
+
+                <!-- 회사 -->
+                <div class="form-group">
+                    <label for="company">회사</label>
+                    <input type="text" id="company" name="company" placeholder="회사명을 입력하세요" required>
+                </div>
+
+                <button type="submit">제출하기</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // 전달되는 파라메다의 값을 확인
+    const _url=new URLSearchParams(location.search);
+    console.log(_url.get("id"));
+    const _id=_url.get("id");
+    console.log(_id);
+    //위에서 전달받은 파라메다는 주소의 입력값으로 사용함.
+    const url=`https://jsonplaceholder.typicode.com/users?id=${_id}`;
+
+    const xhttp=new XMLHttpRequest()
+    xhttp.open("GET",url,true);
+    xhttp.send();
+    xhttp.onload=function(){
+        const obj=JSON.parse(xhttp.responseText);
+        console.log(obj)
+
+        //한번에 처리
+        const inputs=document.querySelectorAll("input");
+        for(input of inputs){
+            /*
+            if(input.id == "name"){
+                alert(input.value);
+
+            }*/
+           switch(input.id){
+            // 케이스가 name이면 어떤 코드를 실행하고 다 하면 빠져나와라
+            //case "name" : 어떤 코드를 실행하고 break;
+            // 마지막에는 default:  break; 을 넣어줘야 한다.
+            case "name" : input.value=obj[0].name; break;
+            case "nickname" : input.value=obj[0].username; break;
+            case "email" : input.value=obj[0].email; break;
+            case "phone" : input.value=obj[0].phone; break;
+            case "address" : input.value=obj[0].address+" "+obj[0].address.zipcode; break;
+            case "website" : input.value=obj[0].website; break;
+            case "company" : input.value=`${obj[0].company.name} ${obj[0].company.catchPhrase} ${obj[0].company.bs}`; break;
+            default:  break;
+
+           }
+        }
+
+    }
+</script>

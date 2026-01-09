@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;  /* 중앙 배치하기 위한 코드 */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* 박스에 효과내기 */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>게시판</h1>
+        <!-- 게시물 목록 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>1</td>
+                    <td><a href="#">첫 번째 게시물</a></td>
+                    <td>홍길동</td>
+                    <td>2026-01-09</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#">두 번째 게시물</a></td>
+                    <td>김철수</td>
+                    <td>2026-01-08</td>
+                </tr>
+                <!-- 게시물 목록은 여기에 추가됩니다 -->
+            </tbody>
+        </table>
+
+       
+    </div>
+</body>
+</html>
+
+<script>
+    const td1=document.createElement("td");
+    td1.textContent="3";
+    console.log(td1);
+
+    //한 줄을 생성하는 것
+    const tr=document.createElement("tr");
+    // tr.appendChild(td1);
+    // tr.append(td1);
+    console.log(tr);
+
+    const td2=document.createElement("td");
+    td2.textContent="제목3";
+    const td3=document.createElement("td");
+    td3.textContent="내용";
+    const td4=document.createElement("td");
+    td4.textContent="2026-01-09";
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    console.log(tr);
+
+    // 타겟 변수를 만들고 그것을 찾기위해 위치를 작성하고
+    const target=document.querySelector("table>tbody");
+    // 그 값을 타겟의 밑에 넣게 한다.
+    target.appendChild(tr)
+
+
+    // 테이블에 있는 내용을 가져오는 방법
+    // tbody에서 2번 행에서 3번째의 데이터를 가져오는 방법 //querySelector 함수는 rows를 지원하지 않음
+    // 그래서 getElementById를 사용해야 해서 위에 있는 tbody에 id 값을 넣어주고 사용한다.
+    // 테이블에서는 rows: 행 / cells : 셀  -> rows[1]; (2번 행)  cells[3]; (4번 셀)
+    // const target2=document.querySelector("table>tbody");
+    const target2=document.getElementById("tbody");
+    const row=target2.rows[1];  //행은 0부터 시작하므로 1은 2번째를 의미한다.
+    const cell=row.cells[2]
+    console.log(cell.textContent)
+</script>
+
+<style>
+    /* 마우스를 올리면 배경색이 변경되게  */
+    tr:hover{
+        /* background-color: yellow; */
+    }
+    /* tr 아래에 th 배경이 있을 경우 tr은 적용이 되지 않는 상태가 됨(모든 기준은 자신이다) */
+    
+    tr:nth-child(1){}
+    /* 2번째 부터 적용하려면 */
+    tr:nth-child(n+2):hover{
+        background-color: yellow; cursor: pointer;
+    }
+</style>

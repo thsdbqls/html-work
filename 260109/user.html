@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        객체 구분                    접근명
+        []:배열                   -> arr[0]
+        {}:객체                   -> person["name"] or person.name
+        function(함수명){}:함수
+        변수 : (예시)Furit
+        "apple" : 문자열
+        100 : 숫자
+
+        - "{\"name\" : \"홍길동\", \"age\" : \"20\"}"   ->  JSON 형태(문자열을 객체형태로 만드면 json이 된다)
+        - "{"name" : "홍길동", "age" : "20"}"           ->  객체, ex) 파이썬에서 딕셔너리
+        - [100,200,300] or ["apple","banana","mango"]   ->  배열
+
+        - json은 문자열이며 객체형태를 가지고 있음 -> "{\"name\" : \"홍길동\", \"age\" : \"20\"}"
+        - json을 객체로 변경하는 함수 JSON.parse(json문자열);
+        - 네트워크에서 데이터를 전송하기 위해서는 객체를 전송할 수 없음
+        그러므로 객체를 문자열로 변경해야함
+        JSON.stringify(객체);\
+
+    </pre>
+</body>
+</html>
+
+<script>
+    //도구
+    const xhttp= new XMLHttpRequest();
+    // open
+    xhttp.open("GET","https://jsonplaceholder.typicode.com/users?id=1",true);
+    //send
+    xhttp.send();
+    xhttp.onload=function(){
+        // xhttp의 값을 console 화면에 출력
+        console.log(xhttp.responseText);
+        
+        // 여기서 geo의 lat 값을 볼려면
+        const obj=JSON.parse(xhttp.responseText); 
+        console.log(obj)
+
+        //접근 방법 1,2
+        console.log(obj[0]["address"]["geo"]["lat"])
+        console.log(obj[0].address.geo.lat)
+    }
+</script>
